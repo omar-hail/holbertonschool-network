@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Displays listening sockets with PID and program names
 netstat -ltnupx
+
