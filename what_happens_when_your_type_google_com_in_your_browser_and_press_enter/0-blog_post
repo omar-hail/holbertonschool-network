@@ -1,0 +1,53 @@
+What happens when you type https://www.google.com in your browser and press Enter
+
+
+When you type https://www.google.com in your browser and press Enter, a complex sequence of events takes place behind the scenes. This process involves multiple systems such as DNS, networking protocols, servers, and security layers working together to deliver the webpage.
+
+1. DNS Request
+
+The first step is resolving the domain name into an IP address. The browser checks its cache, then the operating system cache, and if not found, it queries a DNS server. The DNS system translates www.google.com into an IP address that the browser can use to locate the server.
+
+2. TCP/IP Connection
+
+Once the IP address is known, the browser establishes a TCP connection with the server using a three-way handshake:
+- SYN: The client requests a connection
+- SYN-ACK: The server acknowledges
+- ACK: The client confirms
+
+This ensures reliable communication between the client and the server over the internet.
+
+3. Firewall
+
+Before the request reaches the server, firewalls inspect the traffic. Firewalls filter incoming and outgoing traffic based on predefined security rules. They allow legitimate traffic (such as HTTPS on port 443) and block malicious or unauthorized requests.
+
+4. HTTPS/SSL Encryption
+
+Since the request uses HTTPS, a TLS (SSL) handshake occurs. The server presents its SSL certificate, and the browser verifies it. This establishes an encrypted connection, ensuring that data exchanged between the client and server is secure and cannot be easily intercepted.
+
+5. Load Balancer
+
+The request is then routed through a load balancer. Google uses multiple servers, and the load balancer distributes incoming traffic across them. This improves performance, availability, and fault tolerance.
+
+6. Web Server
+
+The request reaches a web server (such as Nginx or Apache). The web server handles HTTP requests, serves static content, and forwards dynamic requests to the application server.
+
+7. Application Server
+
+The application server processes the request logic. It runs the application code, determines what data is needed, and prepares the response. It may interact with other services or systems.
+
+8. Database
+
+If the request requires data (such as search results), the application server queries a database. The database retrieves the required data and sends it back to the application server.
+
+9. HTTP Response
+
+The application server sends the response back to the web server, which then sends it to the browser. The response includes HTML, CSS, JavaScript, and other resources.
+
+10. Browser Rendering
+
+Finally, the browser parses the HTML, builds the DOM (Document Object Model), applies CSS, executes JavaScript, and renders the webpage for the user.
+
+Conclusion
+
+This entire process happens in milliseconds and involves multiple layers of the web stack, including DNS, networking, security, servers, and databases. Understanding this flow is essential for any full-stack or DevOps engineer.
